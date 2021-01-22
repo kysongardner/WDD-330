@@ -5,7 +5,7 @@ function convertToJson(res) {
       throw new Error("Bad Response");
     }
 }
-let products = [];
+// let products = [];
 export default class ProductData {
     constructor(category) {
         this.category = category
@@ -13,15 +13,12 @@ export default class ProductData {
     }
       
     getProductsData() {
-        fetch(this.path)
-          .then(convertToJson)
-          .then((t) => {
-            products = t;
-        });
+      return fetch(this.path)
+        .then(convertToJson).then((data) => data);
     }
 
-    findProductById(id) {
-        products = this.getProductsData();
+    async findProductById(id) {
+        const products = await this.getProductsData();
         return products.find((item) => item.Id === id);
-    } 
+    }
 }
