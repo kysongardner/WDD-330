@@ -4,6 +4,5 @@ import { getParams } from "./utils.js";
 
 const dataSource = new ProductData("tents");
 const productId = getParams("product");
-
-let product = new ProductDetails(productId, dataSource);
+const product = new ProductDetails(productId, dataSource);
 product.init();

@@ -5,11 +5,11 @@ function convertToJson(res) {
       throw new Error("Bad Response");
     }
 }
-// let products = [];
+
 export default class ProductData {
     constructor(category) {
-        this.category = category
-        this.path = `../json/${this.category}.json`
+        this.category = category;
+        this.path = `../json/${this.category}.json`;
     }
       
     getProductsData() {

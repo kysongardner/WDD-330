@@ -1,3 +1,5 @@
+// import { doc } from "prettier";
+
 // wrapper for querySelector...returns matching element
 export function qs(selector) {
   return document.querySelector(selector);
@@ -32,4 +34,31 @@ export function renderListWithTemplate(template, parentElement, list, callback){
     const hydratedTemplate = callback(clone, product);
     parentElement.appendChild(hydratedTemplate);
   })
+}
+
+export function renderWithTemplate(template, parentElement, data, callback){
+  // const getTemplate = document.getElementById("product-card-template");
+  
+      let clone = template.content.cloneNode(true);
+      if (callback) {
+        clone = callback(clone, data);
+      }
+      parentElement.appendChild(clone);
+}
+
+export async function loadTemplate(path) { 
+  const template = await fetch(path).then((response) => response.text())
+  const templateElement = document.createElement("template");
+  templateElement.innerHTML = template;
+  return templateElement
+}
+
+export async function loadHeaderFooter() {
+  const header = await loadTemplate("../partials/header.html");
+  const footer = await loadTemplate("../partials/footer.html");
+  const mainHeader = document.querySelector("#main-header");
+  const mainFooter = document.querySelector("#main-footer");
+  renderWithTemplate(header, mainHeader);
+  renderWithTemplate(footer, mainFooter);
+
 }
