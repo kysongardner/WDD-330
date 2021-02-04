@@ -1,5 +1,6 @@
-import { setLocalStorage } from "./utils.js";
+import { setLocalStorage, loadHeaderFooter } from "./utils.js";
 
+loadHeaderFooter();
 export default class ProductData {
     constructor(productId, dataSource){
         this.productId = productId;
