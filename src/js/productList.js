@@ -24,6 +24,7 @@ export default class ProductList {
     templateClone.querySelector(".card__brand").innerHTML = product.Brand.Name
     templateClone.querySelector(".card__name").innerHTML = product.NameWithoutBrand
     templateClone.querySelector(".product-card__price").innerHTML = product.ListPrice
+    templateClone.querySelector("a").href += product.Id
     return templateClone
   
   }
