@@ -1,6 +1,6 @@
 import { renderListWithTemplate, getLocalStorage } from "./utils.js"
 
-export default class ProductList {
+export default class ShoppingCart {
     constructor(key, listElement) {
       this.key = key;
       this.listElement = listElement;

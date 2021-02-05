@@ -6,6 +6,22 @@
     <title>Sleep Outside | Cart</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/cart.js" type="module"></script>
+    <template id="cart-card-template">
+      <li class="cart-card divider">
+        <a href="" class="cart-card__image">
+          <img
+            src="${this.product.Image}"
+            alt="${this.product.Name}"
+          />
+        </a>
+        <a href="product_pages/">
+          <h2 class="card__name">${this.product.Name}</h2>
+        </a>
+        <p class="cart-card__color">${this.product.Colors[0].ColorName}</p>
+        <p class="cart-card__quantity">Qty: </p>
+        <p class="cart-card__price"></p>${this.product.FinalPrice}
+      </li>
+    </template>
   </head>
   <body>
     <header class="divider" id="main-header">
