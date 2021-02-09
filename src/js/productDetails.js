@@ -43,7 +43,6 @@ export default class ProductData {
   }
 
   renderProductDetails() {
-    console.log(this.product)
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
         <h2 class="divider">${this.product.NameWithoutBrand}</h2>
         <img
