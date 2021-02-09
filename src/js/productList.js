@@ -15,8 +15,7 @@ export default class ProductList {
   renderList(list) {
     this.listElement.innerHTML = ""
     const template = document.getElementById("product-card-template");
-    const filterList = this.filterProducts(list)
-    renderListWithTemplate(template, this.listElement, filterList, this.prepareTemplate)
+    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate)
     }
   
   prepareTemplate(templateClone, product){
