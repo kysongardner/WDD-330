@@ -19,8 +19,8 @@ export default class ShoppingCart {
       }
     
     prepareTemplate(templateClone, product){
-      templateClone.querySelector(".cart-card__img").setAttribute("src", product.Image);
-      templateClone.querySelector(".cart-card__img").setAttribute("alt", product.Name);
+      templateClone.querySelector(".cart-card__img > img").setAttribute("src", product.Image);
+      templateClone.querySelector(".cart-card__img > img").setAttribute("alt", product.Name);
       templateClone.querySelector(".cart-card__color").innerHTML = product.Brand.Name;
       templateClone.querySelector(".cart-card__name").innerHTML = product.Colors[0].ColorName;
       templateClone.querySelector(".cart-card__price").innerHTML = product.FinalPrice;

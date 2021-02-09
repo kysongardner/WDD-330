@@ -24,15 +24,6 @@ export default class ProductData {
   }
 
   addToCart() {
-
-    // create list
-    // check list to see if their are items in it
-    // add the new item to the list
-    // get the local storage as a starting point
-    // add new item to the end of the list
-    // push it back out to local storage
-
-
     let productList = getLocalStorage("so-cart")
     if (!productList) {
       productList = []
@@ -40,6 +31,13 @@ export default class ProductData {
     productList.push(this.product)
 
     setLocalStorage("so-cart", productList);
+  }
+  calculateTotalPrice() {
+    let price = 0
+    let productList = getLocalStorage("so-cart")
+    for (const productPrice of productList.FinalPrice) {
+      price = price + productPrice
+    }
   }
 
   renderProductDetails() {
