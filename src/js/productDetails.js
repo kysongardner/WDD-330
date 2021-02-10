@@ -23,6 +23,18 @@ export default class ProductData {
       .addEventListener("click", this.addToCart.bind(this));
   }
 
+  cartBadge() {
+    let number = 0;
+    let count = document.getElementById("cart-badge");
+    let incrementor = document.getElementById("addToCart");
+    incrementor.addEventListener("click", plusOne);
+
+    function plusOne() {
+      number++;
+      count.textContent = number.toString();
+    }
+  }
+
   addToCart() {
     let productList = getLocalStorage("so-cart")
     if (!productList) {
