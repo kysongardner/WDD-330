@@ -15,12 +15,11 @@ export default class ProductList {
   renderList(list) {
     this.listElement.innerHTML = ""
     const template = document.getElementById("product-card-template");
-    const filterList = this.filterProducts(list)
-    renderListWithTemplate(template, this.listElement, filterList, this.prepareTemplate)
+    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate)
     }
   
   prepareTemplate(templateClone, product){
-    templateClone.querySelector(".card__img").setAttribute("src", product.Image)
+    templateClone.querySelector(".card__img").setAttribute("src", product.Images.PrimaryLarge)
     templateClone.querySelector(".card__brand").innerHTML = product.Brand.Name
     templateClone.querySelector(".card__name").innerHTML = product.NameWithoutBrand
     templateClone.querySelector(".product-card__price").innerHTML = product.ListPrice

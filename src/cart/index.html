@@ -8,18 +8,18 @@
     <script src="../js/cart.js" type="module"></script>
     <template id="cart-card-template">
       <li class="cart-card divider">
-        <a href="" class="cart-card__image">
+        <a href="" class="cart-card__img">
           <img
-            src="${this.product.Image}"
-            alt="${this.product.Name}"
+          src=""
+          alt=""
           />
         </a>
         <a href="product_pages/">
-          <h2 class="card__name">${this.product.Name}</h2>
+          <h2 class="cart-card__name">${this.product.Name}</h2>
         </a>
         <p class="cart-card__color">${this.product.Colors[0].ColorName}</p>
         <p class="cart-card__quantity">Qty: </p>
-        <p class="cart-card__price"></p>${this.product.FinalPrice}
+        <p class="cart-card__price">${this.product.FinalPrice}</p>
       </li>
     </template>
     <div class="total-cart-price"></div>

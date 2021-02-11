@@ -23,16 +23,19 @@ export default class ProductData {
       .addEventListener("click", this.addToCart.bind(this));
   }
 
+  cartBadge() {
+    let number = 0;
+    let count = document.getElementById("cart-badge");
+    let incrementor = document.getElementById("addToCart");
+    incrementor.addEventListener("click", plusOne);
+
+    function plusOne() {
+      number++;
+      count.textContent = number.toString();
+    }
+  }
+
   addToCart() {
-
-    // create list
-    // check list to see if their are items in it
-    // add the new item to the list
-    // get the local storage as a starting point
-    // add new item to the end of the list
-    // push it back out to local storage
-
-
     let productList = getLocalStorage("so-cart")
     if (!productList) {
       productList = []
@@ -41,6 +44,7 @@ export default class ProductData {
 
     setLocalStorage("so-cart", productList);
   }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   displayTotalPrice(price) {
@@ -50,15 +54,21 @@ export default class ProductData {
     cartDIV.appendChild(totalPrice)
 
   }
+=======
+>>>>>>> 3d33dd1944a3e6a19b42e07a454921919d0ff22c
   calculateTotalPrice() {
     let price = 0
     let productList = getLocalStorage("so-cart")
     for (const productPrice of productList.FinalPrice) {
       price = price + productPrice
     }
+<<<<<<< HEAD
     this.displayTotalPrice(price)
   }
 >>>>>>> Stashed changes
+=======
+  }
+>>>>>>> 3d33dd1944a3e6a19b42e07a454921919d0ff22c
 
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
