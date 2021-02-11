@@ -41,6 +41,24 @@ export default class ProductData {
 
     setLocalStorage("so-cart", productList);
   }
+<<<<<<< Updated upstream
+=======
+  displayTotalPrice(price) {
+    const cartDIV = document.querySelector(".total-cart-price")
+    let totalPrice = document.createElement("h2")
+    totalPrice.innerHTML = "Total Price: " + price
+    cartDIV.appendChild(totalPrice)
+
+  }
+  calculateTotalPrice() {
+    let price = 0
+    let productList = getLocalStorage("so-cart")
+    for (const productPrice of productList.FinalPrice) {
+      price = price + productPrice
+    }
+    this.displayTotalPrice(price)
+  }
+>>>>>>> Stashed changes
 
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
