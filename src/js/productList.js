@@ -1,3 +1,4 @@
+import { template } from "@babel/core"
 import { renderListWithTemplate } from "./utils.js"
 
 export default class ProductList {
@@ -19,7 +20,7 @@ export default class ProductList {
     }
   
   prepareTemplate(templateClone, product){
-    templateClone.querySelector(".card__img").setAttribute("src", product.Images.PrimaryLarge)
+    templateClone.querySelector(".card__img").setAttribute("src", product.Images.PrimaryMedium)
     templateClone.querySelector(".card__brand").innerHTML = product.Brand.Name
     templateClone.querySelector(".card__name").innerHTML = product.NameWithoutBrand
     templateClone.querySelector(".product-card__price").innerHTML = product.ListPrice
