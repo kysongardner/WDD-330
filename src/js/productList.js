@@ -1,4 +1,3 @@
-import { template } from "@babel/core"
 import { renderListWithTemplate } from "./utils.js"
 
 export default class ProductList {
