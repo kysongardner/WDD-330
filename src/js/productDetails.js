@@ -23,18 +23,6 @@ export default class ProductData {
       .addEventListener("click", this.addToCart.bind(this));
   }
 
-  cartBadge() {
-    let number = 0;
-    let count = document.getElementById("cart-badge");
-    let incrementor = document.getElementById("addToCart");
-    incrementor.addEventListener("click", plusOne);
-
-    function plusOne() {
-      number++;
-      count.textContent = number.toString();
-    }
-  }
-
   addToCart() {
     let productList = getLocalStorage("so-cart")
     if (!productList) {
@@ -61,7 +49,6 @@ export default class ProductData {
     this.displayTotalPrice(price)
   }
 
-}
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
         <h2 class="divider">${this.product.NameWithoutBrand}</h2>

@@ -20,4 +20,16 @@ export default class ProductData {
         const products = await fetch(baseURL + `product/${id}`).then(convertToJson)
         return products.Result
     }
+
+    cartBadge() {
+      let number = 0;
+      let count = document.getElementById("cart-badge");
+      let incrementor = document.getElementById("addToCart");
+      incrementor.addEventListener("click", plusOne);
+  
+      function plusOne() {
+        number++;
+        count.textContent = number.toString();
+      }
+    }
 }
