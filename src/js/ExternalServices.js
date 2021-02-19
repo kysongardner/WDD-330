@@ -1,4 +1,4 @@
-const baseURL = "http://157.201.228.93:2992/"
+const baseURL = "http://157.201.228.93:2992/checkout"
 function convertToJson(res) {
     if (res.ok) {
       return res.json();
@@ -7,7 +7,7 @@ function convertToJson(res) {
     }
 }
 
-export default class ProductData {
+export default class ExternalServices {
     constructor() {
     }
       
@@ -30,6 +30,9 @@ export default class ProductData {
       function plusOne() {
         number++;
         count.textContent = number.toString();
+      }
+      checkout(order){
+        console.log(order)
       }
     }
 }

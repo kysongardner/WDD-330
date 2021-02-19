@@ -5,7 +5,7 @@ import {
 } from "./utils.js";
 
 loadHeaderFooter();
-export default class ProductData {
+export default class ExternalServices {
   constructor(productId, dataSource) {
     this.productId = productId;
     this.product = {};
