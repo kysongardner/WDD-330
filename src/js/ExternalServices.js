@@ -21,18 +21,19 @@ export default class ExternalServices {
         return products.Result
     }
 
-    cartBadge() {
-      let number = 0;
-      let count = document.getElementById("cart-badge");
-      let incrementor = document.getElementById("addToCart");
-      incrementor.addEventListener("click", plusOne);
-  
-      function plusOne() {
-        number++;
-        count.textContent = number.toString();
-      }
+    // cartBadge() {
+    //   let number = 0;
+    //   let count = document.getElementById("cart-badge");
+    //   let incrementor = document.getElementById("addToCart");
+    //   incrementor.addEventListener("click", plusOne);
+    // }
+      // plusOne() {
+      //   number++;
+      //   count.textContent = number.toString();
+      // }
+    
       checkout(order){
         console.log(order)
       }
-    }
+    
 }
