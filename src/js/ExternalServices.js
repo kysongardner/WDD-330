@@ -1,4 +1,4 @@
-const baseURL = "http://157.201.228.93:2992/checkout"
+const baseURL = "http://157.201.228.93:2992/"
 function convertToJson(res) {
     if (res.ok) {
       return res.json();
@@ -33,7 +33,7 @@ export default class ExternalServices {
       // }
     
       checkout(order){
-        console.log(order)
+        return fetch(baseURL + "checkout")
       }
     
 }

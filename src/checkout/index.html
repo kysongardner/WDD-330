@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     
   </head>
-  <body onload="calcAndDisplaySubtotal()">
+  <body>
     <header class="divider" id="main-header">
 
     
@@ -17,7 +17,7 @@
         <h2>Review & Place your Order</h2>
       </section>
 
-      <form>
+      <form id="checkout-form">
 
         <fieldset>
           <legend>Shipping</legend>
@@ -32,12 +32,9 @@
           <label for="state">State</label><br>
           <input type="text" id="state" name="state" required><br>
           <label for="zip">Zip</label><br>
-          <input type="text" id="zip" name="zip" required oninput="calcAndDisplayShippingTaxOrderTotal()"><br>
+          <input type="text" id="zip" name="zip" required><br>
         </fieldset>
 
-      </form>
-
-      <form>
         <fieldset>
         <legend>Payment</legend>
         <label for="card-number">Card Number</label><br>
@@ -47,9 +44,7 @@
         <label for="security-code">Security Code</label><br>
         <input type="number" id="security-code" name="security-code" required><br>
         </fieldset>
-      </form>
 
-      <form>
         <fieldset>
         <legend>Order Summary</legend>
         <label for="item-subtotal">Item Subtotal</label><br>
@@ -57,11 +52,10 @@
         <label for="tax">Tax</label><br>
         <label for="order-total"><strong>Order Total</strong></label><br>
       </fieldset>
+      <button type="submit">CHECKOUT</button>
       </form>
-      
-      
 
     </main>
-    <footer id="main-footer"></footer> 
+    <footer id="main-footer"></footer>
   </body>
 </html>

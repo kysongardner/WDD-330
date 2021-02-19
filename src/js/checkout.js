@@ -1,24 +1,22 @@
 import ExternalServices from "./ExternalServices.js";
 import { loadHeaderFooter } from "./utils.js";
 import CheckoutProcess from "./CheckoutProcess.js";
+import { check } from "prettier";
 
 loadHeaderFooter();
 
 
 const checkout = new CheckoutProcess("so-cart")
-checkout.calcAndDisplaySubtotal()
-checkout.calcAndDisplayShippingTaxOrderTotal()
 
+document.getElementById("checkout-form").addEventListener("submit", checkoutButtonClicked)
+document.getElementById("zip").addEventListener("blur", checkout.calcAndDisplayShippingTaxOrderTotal)
+document.getElementsByTagName("body").addEventListener("load", checkout.calcAndDisplaySubtotal())
 
-<<<<<<< HEAD
-function checkoutButtonClicked(){
-    // Prepare order data object
-    const eS = ExternalServices()
-    eS.checkout()
+function checkoutButtonClicked(ev){
+    ev.preventDefault()
+    checkout.callCheckout(ev.target)
 }
 
 
 loadHeaderFooter();
 checkoutButtonClicked();
-=======
->>>>>>> 1d24487a6341d6881cefcba38eb0a400f866809d
