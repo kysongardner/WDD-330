@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Checkout</title>
     <link rel="stylesheet" href="../css/style.css" />
-    
+    <script src="../js/checkout.js" type="module"></script>
+    <script src="../js/CheckoutProcess.js" type="module"></script>
   </head>
   <body>
     <header class="divider" id="main-header">
@@ -17,6 +18,7 @@
         <h2>Review & Place your Order</h2>
       </section>
 
+      <section class="checkout-form">
       <form id="checkout-form">
 
         <fieldset>
@@ -45,15 +47,16 @@
         <input type="number" id="security-code" name="security-code" required><br>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="checkout-summary">
         <legend>Order Summary</legend>
-        <label for="item-subtotal">Item Subtotal</label><br>
-        <label for="shipping-estimate">Shipping Estimate</label><br>
-        <label for="tax">Tax</label><br>
-        <label for="order-total"><strong>Order Total</strong></label><br>
+        <label for="item-subtotal">Item Subtotal(<span id="num-items"></span>)&emsp;</label><span id="cartTotal"></span><br>
+        <label for="shipping-estimate">Shipping Estimate</label><span id="shipping"></span><br>
+        <label for="tax" >Tax</label><span id="tax"></span><br>
+        <label for="order-total" ><strong>Order Total</strong></label><span id="orderTotal"></span><br>
       </fieldset>
-      <button type="submit">CHECKOUT</button>
+      <button type="submit" id="checkoutSubmit">CHECKOUT</button>
       </form>
+      </section>
 
     </main>
     <footer id="main-footer"></footer>

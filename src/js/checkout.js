@@ -5,18 +5,16 @@ import { check } from "prettier";
 
 loadHeaderFooter();
 
+const checkout = new CheckoutProcess("so-cart", ".checkout-summary");
+checkout.init();
 
-const checkout = new CheckoutProcess("so-cart")
+document
+  .querySelector("#zip")
+  .addEventListener("blur", checkout.calculateOrdertotal.bind(checkout));
+document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
+  e.preventDefault();
 
-document.getElementById("checkout-form").addEventListener("submit", checkoutButtonClicked)
-document.getElementById("zip").addEventListener("blur", checkout.calcAndDisplayShippingTaxOrderTotal)
-document.getElementsByTagName("body").addEventListener("load", checkout.calcAndDisplaySubtotal())
+  checkout.checkout();
+});
 
-function checkoutButtonClicked(ev){
-    ev.preventDefault()
-    checkout.callCheckout(ev.target)
-}
-
-
-loadHeaderFooter();
-checkoutButtonClicked();
+// checkoutButtonClicked();
