@@ -16,6 +16,9 @@
 * {
   box-sizing: border-box;
 }
+.product-category-name{
+  padding-left: 4em;
+}
 .required{
   color:red;
 }
