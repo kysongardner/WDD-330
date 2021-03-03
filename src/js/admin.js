@@ -46,13 +46,8 @@ export default class Admin {
 
     submitButton.addEventListener("click", () => {
       this.login({ email: email.value, password: password.value }, () => {
-<<<<<<< HEAD
         this.showOrders();
       })
-=======
-      }),
-        this.services.orders(this.token);
->>>>>>> 6d75c881c6148b8e7e19fe8675a3988315573155
     });
   }
   async login(creds, next) {
@@ -71,19 +66,11 @@ export default class Admin {
 
   async showOrders() {
     try {
-<<<<<<< HEAD
       const orders = await this.services.orders(this.token);
       this.mainElement.innerHTML = orderHtml();
       const parent = document.querySelector("#orders tbody");
       // why not a template like we have done before?  The markup here was simple enough that I didn't think it worth the overhead...but a template would certainly work!
       parent.innerHTML = orders.map(order=> `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString("en-US")}</td><td>${order.items ? order.items.length : 0}</td><td>${order.orderTotal}</td></tr>`).join("");
-=======
-      const orders = await this.services.getOrders(this.token);
-      this.mainElement.innerHTML = orderHtml();
-      const parent = document.querySelector("#orders tbody");
-      // why not a template like we have done before?  The markup here was simple enough that I didn't think it worth the overhead...but a template would certainly work!
-      parent.innerHTML = orders.map(order=> `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString("en-US")}</td><td>${order.items.length}</td><td>${order.orderTotal}</td></tr>`).join("");
->>>>>>> 6d75c881c6148b8e7e19fe8675a3988315573155
     } catch(err) {
       console.log(err);
     }
